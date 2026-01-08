@@ -1,74 +1,53 @@
-📌 Reproducible ML Pipeline using Dagster
+**Reproducible ML Pipeline using Dagster**
 
-This project demonstrates how Dagster can be used to build a reproducible, reliable, and modular machine learning pipeline, avoiding common issues of traditional Jupyter notebooks.
+The project shows that Dagster is capable of constructing a trusted, re-usable and modular machine learning pipeline with none of the common problems of a standard Jupyter notebook.
 
-🚀 Objective
+**Objective**
 
-Track what data goes into which ML model
+What ML model are monitored with the information fed to them.
+Increase the capacity of allowing some re-runs in case there are some particular components that have been altered.
+Increase the reproducibility and reliability of the workflows of ML.
 
-Enable partial re-runs when only specific components change
+**Dataset**
 
-Improve reproducibility and reliability of ML workflows
-
-📊 Dataset
-
-Source: Yahoo Finance (via yfinance)
-
+Yahoo Finance (yfinance) is used to retrieve the information.
 Stock: Apple Inc. (AAPL)
+Time Range: 2018-2024
 
-Time Range: 2018–2024
+**Pipeline Assets**
 
-🧱 Pipeline Assets
-
-The pipeline is built using Dagster assets:
-
-stock_data – Fetches raw stock price data
-
-eda – Performs exploratory data analysis
-
-features – Feature engineering (returns, moving averages)
-
-split_data – Train-test split
-
+The pipeline construction is pegged on Dagster resources:
+stock - Returns raw stock prices.
+eda - fermat exploratory data analysis.
+engineering Feature engineering (moving averages, returns)
+split_data - Train-test split
 ML Models:
-
 linear_regression
-
 decision_tree
-
 random_forest
-
 gradient_boosting
 
-🔁 Partial Re-run Capability (Key Feature)
+**Capability to re-run partially - Key Feature.**
 
-Dagster tracks dependencies between assets.
-When only a single model is modified (e.g., Random Forest hyperparameters), only that model is re-executed, while all upstream assets are reused from storage.
+Dagster follows assets that are dependent.
+In a scenario where one model is varied (e.g. hyperparameters of the Random Forest), a model is re-run, but all the upstream assets are loaded out of storage.
+This is time wasting and not necessary re-calculating.
 
-This avoids unnecessary recomputation and saves time.
-
-📸 Screenshots
+**Screenshots**
 Pipeline Graph
-
 Partial Re-run Proof
 
-🛠 How to Run Locally
-pip install dagster dagster-webserver yfinance scikit-learn pandas matplotlib
+**How to Run Locally**
+pip install dagser dagser- webserver yfinance scikit- learn pandas matplotlib.
 dagster dev -f pipeline.py
 
-
 Then open:
-
 http://127.0.0.1:3000
 
-🧠 Key Takeaway
+**Key Takeaway**
 
 Dagster makes ML pipelines:
-
 Modular
-
 Reproducible
-
 Easy to re-run selectively
-
-This approach is far superior to traditional notebook-based workflows.
+This is much better than the orthodox workflow based on notebooks.
