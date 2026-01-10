@@ -34,8 +34,9 @@ In a scenario where one model is varied (e.g. hyperparameters of the Random Fore
 This is time wasting and not necessary re-calculating.
 
 **Screenshots**
-Pipeline Graph
-Partial Re-run Proof
+screenshots/dagster_pipeline_graph.png
+screenshots/partial_rerun_ranom_forest.png
+screenshots/partial_rerun_ranom_forest_vscode.png
 
 **How to Run Locally**
 pip install dagser dagser- webserver yfinance scikit- learn pandas matplotlib.
